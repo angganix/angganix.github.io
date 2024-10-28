@@ -4,12 +4,19 @@ import AppLogo from '../widgets/AppLogo'
 import Link from 'next/link'
 import menu from '@/constants/menu'
 import { CiMenuFries } from "react-icons/ci";
+import { LiaTimesSolid } from "react-icons/lia";
+import { motion } from 'framer-motion';
 
 const TopNav = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [showDrawer, setShowDrawer] = useState(false);
 
     const scrollNavEffect = () => {
         setScrolled(window.scrollY > 0);
+    }
+
+    const toggleDrawer = () => {
+        setShowDrawer(!showDrawer);
     }
 
     useEffect(() => {
@@ -20,30 +27,60 @@ const TopNav = () => {
     }, []);
 
     return (
-        <nav className={`sticky top-0 transition-all duration-200 ease-in-out ${scrolled ? "bg-white shadow-lg shadow-zinc-700/5" : ""}`.trim()}>
-            <div className="flex justify-between items-center px-3 lg:px-0 lg:max-w-7xl mx-auto">
-                <div className="flex-grow">
-                    <AppLogo />
+        <>
+            <nav className={`sticky top-0 transition-all duration-200 ease-in-out bg-white z-20 ${scrolled ? "shadow-md shadow-zinc-400/5" : ""}`.trim()}>
+                <div className="flex justify-between items-center px-3 lg:px-0 lg:max-w-6xl mx-auto">
+                    <div className="flex-grow">
+                        <AppLogo />
+                    </div>
+                    <div className="flex-shrink-0">
+                        <ul className="items-center hidden lg:flex">
+                            {menu?.map((item, index) => (
+                                <NavLink key={index} {...item} />
+                            ))}
+                        </ul>
+                        <button type="button" className="flex relative lg:hidden p-2 rounded-lg hover:bg-zinc-100 transition-all duration-200 ease-in-out items-center justify-center" onClick={toggleDrawer}>
+                            <motion.span
+                                animate={showDrawer ? "open" : "close"}
+                                initial="open"
+                                variants={{
+                                    close: { opacity: 1, x: 0, position: "static" },
+                                    open: { opacity: 0, x: -5, position: "absolute" }
+                                }}
+                            >
+                                <CiMenuFries size={24} />
+                            </motion.span>
+                            <motion.span
+                                animate={showDrawer ? "open" : "close"}
+                                initial="close"
+                                variants={{
+                                    close: { opacity: 0, x: 5, position: "absolute" },
+                                    open: { opacity: 1, x: 0, position: "static" }
+                                }}
+                            >
+                                <LiaTimesSolid size={24} />
+                            </motion.span>
+                        </button>
+                    </div>
                 </div>
-                <div className="flex-shrink-0">
-                    <ul className="items-center hidden lg:flex">
-                        {menu?.map((item, index) => (
-                            <NavLink key={index} {...item} />
-                        ))}
-                    </ul>
-                    <button type="button" className="flex lg:hidden p-2 rounded-lg hover:bg-zinc-100 transition-all duration-200 ease-in-out">
-                        <CiMenuFries size={24} />
-                    </button>
-                </div>
-            </div>
-        </nav>
+            </nav>
+
+            {/* Mobile Sidebar Drawer Navigation */}
+            <aside id="mobile-drawer" className={`block lg:hidden fixed top-14 transition-all duration-200 ease-in-out ${showDrawer ? "-left-0" : "-left-full"} z-30 bg-white w-full h-full p-2`}>
+                <ul className="flex lg:hidden flex-col">
+                    {menu?.map((item, index) => (
+                        <NavLink key={index} {...item} toggleDrawer={toggleDrawer} />
+                    ))}
+                </ul>
+            </aside>
+        </>
     )
 }
 
-const NavLink = ({ path, label }) => {
+const NavLink = ({ path, label, toggleDrawer = () => null }) => {
     return (
-        <li>
-            <Link href={path} className="p-4 text-zinc-500 hover:text-zinc-900">
+        <li className="block" onClick={toggleDrawer}>
+            <Link href={path} className="p-2 px-3 rounded-lg text-zinc-500 border-b-2 border-transparent transition-all duration-200 ease-in-out hover:text-lime-600 hover:bg-lime-50 flex">
                 {label}
             </Link>
         </li>

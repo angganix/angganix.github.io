@@ -14,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
       <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
