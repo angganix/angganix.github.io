@@ -3,10 +3,10 @@ const menu = [
     path: "/",
     label: "Home",
   },
-  {
-    path: "/docs",
-    label: "Docs",
-  },
+  // {
+  //   path: "/docs",
+  //   label: "Docs",
+  // },
   {
     path: "/about",
     label: "About",

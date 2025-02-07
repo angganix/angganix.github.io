@@ -29,7 +29,7 @@ const TopNav = () => {
 
     return (
         <>
-            <nav className={`sticky top-0 transition-all duration-200 ease-in-out z-20 ${scrolled ? "bg-white shadow-md shadow-zinc-400/5" : "bg-lime-300"}`.trim()}>
+            <nav className={`sticky top-0 transition-all duration-200 ease-in-out z-20 bg-white ${scrolled ? "shadow-md shadow-zinc-400/5" : ""}`.trim()}>
                 <div className="flex justify-between items-center px-3 lg:px-0 lg:max-w-6xl mx-auto">
                     <div className="flex-grow">
                         <AppLogo />
@@ -78,13 +78,13 @@ const TopNav = () => {
     )
 }
 
-const NavLink = ({ path, label, toggleDrawer = () => null, scrolled }) => {
+const NavLink = ({ path, label, toggleDrawer = () => null }) => {
     const pathname = usePathname();
     const isActive = pathname === path;
 
     return (
         <li className="block" onClick={toggleDrawer}>
-            <Link href={path} className={`top-nav-link ${scrolled ? "text-zinc-500" : "text-slate-800"} ${isActive ? "active" : ""}`}>
+            <Link href={path} className={`top-nav-link ${isActive ? "active" : ""}`}>
                 {label}
             </Link>
         </li>
