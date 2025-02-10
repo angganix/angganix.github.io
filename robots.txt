@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /_next/
+Disallow: /api/
+Disallow: /static/
+Disallow: /server/
+Allow: /
+
+Sitemap: https://angganix.my.id/sitemap.xml
