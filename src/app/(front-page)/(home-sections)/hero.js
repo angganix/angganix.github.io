@@ -68,9 +68,9 @@ const Hero = () => {
               <div className="rounded-full overflow-hidden bg-gradient-to-t from-lime-200 via-lime-100 to-transparent relative w-72 h-72 mt-8 lg:mt-0 mb-3">
                 <Image
                   alt={process.env.NEXT_PUBLIC_APP_DESCRIPTION}
-                  src="/images/profile.png"
+                  src="/images/profile.jpg"
                   sizes="100vw"
-                  className="transform rotate-2"
+                  className="transform rotate-2 object-cover"
                   fill={true}
                   priority="high"
                 />
