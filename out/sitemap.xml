@@ -5,22 +5,22 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://angganix.my.id/</loc>
+  <loc>https://angganix.is-a.dev/</loc>
   <lastmod>2025-02-10T06:26:21+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://angganix.my.id/about</loc>
+  <loc>https://angganix.is-a.dev/about</loc>
   <lastmod>2025-02-10T06:26:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://angganix.my.id/contact</loc>
+  <loc>https://angganix.is-a.dev/contact</loc>
   <lastmod>2025-02-10T06:26:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://angganix.my.id/portofolio</loc>
+  <loc>https://angganix.is-a.dev/portofolio</loc>
   <lastmod>2025-02-10T06:26:21+00:00</lastmod>
   <priority>0.90</priority>
 </url>
