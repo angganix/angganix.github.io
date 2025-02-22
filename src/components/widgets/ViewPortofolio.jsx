@@ -20,7 +20,7 @@ const ViewPortofolio = ({ item }) => {
         className={`relative flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 cursor-pointer`}
         onClick={openDetail}
       >
-        <div className="relative w-full h-40">
+        <div className="relative w-full min-h-52">
           <Image
             alt={item?.title}
             src={item?.image}

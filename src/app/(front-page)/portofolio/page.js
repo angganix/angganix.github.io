@@ -104,7 +104,7 @@ const Portofolio = () => {
       image: "/images/anime-list.webp",
       category: "Tools",
       stack: ["React", "GraphQL", "Styled Components"],
-      link: "https://anime.angganix.my.id",
+      link: "https://anime-list-collections.vercel.app/",
     },
     {
       title: "Aplikasi Mekanik",
