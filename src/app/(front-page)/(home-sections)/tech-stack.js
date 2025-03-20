@@ -13,7 +13,7 @@ import {
 import { RiFirebaseFill, RiNextjsFill } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
 import {
-  SiApachekafka,
+  SiFlutter,
   SiMongodb,
   SiMysql,
   SiNuxtdotjs,
@@ -27,6 +27,11 @@ const TechStack = () => {
       name: "React JS",
       icon: FaReact,
       color: "text-cyan-500",
+    },
+    {
+      name: "Flutter",
+      icon: SiFlutter,
+      color: "text-sky-400",
     },
     {
       name: "NextJS",
@@ -96,10 +101,6 @@ const TechStack = () => {
       name: "Docker",
       icon: FaDocker,
       color: "text-blue-600",
-    },
-    {
-      name: "Kafka",
-      icon: SiApachekafka,
     },
     {
       name: "Socket.IO",

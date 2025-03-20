@@ -64,7 +64,7 @@ const ViewPortofolio = ({ item }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Content */}
-            <div className="space-y-4 relative h-80">
+            <div className="space-y-4 relative h-96">
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-200 hover:text-gray-300 transition-colors absolute -top-4 right-0 m-2 z-10 text-lg"
@@ -75,7 +75,7 @@ const ViewPortofolio = ({ item }) => {
                 alt={item?.title}
                 src={item?.image}
                 fill
-                className="object-fill rounded-lg"
+                className="object-cover object-top rounded-lg"
               />
             </div>
           </div>

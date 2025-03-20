@@ -2,6 +2,10 @@ import BreadCrumb from "@/components/widgets/BreadCrumb";
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: `About - ${process.env.NEXT_PUBLIC_APP_NAME}`,
+};
+
 const About = () => {
   return (
     <div className="px-4 lg:px-28">

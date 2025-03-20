@@ -1,7 +1,10 @@
 import BreadCrumb from "@/components/widgets/BreadCrumb";
 import ViewPortofolio from "@/components/widgets/ViewPortofolio";
-import Image from "next/image";
 import React from "react";
+
+export const metadata = {
+  title: `Portofolio - ${process.env.NEXT_PUBLIC_APP_NAME}`,
+};
 
 const Portofolio = () => {
   const list = [
@@ -29,7 +32,6 @@ const Portofolio = () => {
         "VIP Reseller (API)",
         "Bootstrap CSS",
       ],
-      link: "https://namanya.id/",
     },
     {
       title: "Bakmi Buncit",
@@ -64,11 +66,10 @@ const Portofolio = () => {
       image: "/images/ayumylumstore.webp",
       category: "Ecommerce",
       stack: ["Laravel", "React", "Firebase", "MySQL", "Bootstrap CSS"],
-      link: "https://ayumylumstore.com",
     },
     {
       title: "DrSpces Reward",
-      image: "/images/drspecs.webp",
+      image: "/images/drspecs.png",
       category: "Cashback Reward App",
       stack: [
         "Laravel",

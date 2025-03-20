@@ -10,6 +10,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
+export const metadata = {
+  title: `Contact - ${process.env.NEXT_PUBLIC_APP_NAME}`,
+};
+
 const Contact = () => {
   // Data kontak dengan ikon dan link
   const contacts = [
